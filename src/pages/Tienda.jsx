@@ -29,9 +29,9 @@ const Tienda = () => {
   return (
     <>
         <div className="container">
-        <h3 className="text-center py-3 text-black-50">Todos los Productos ({datos.length})</h3>
+        <h3 className="text-center py-3 ">Todos los Productos ({datos.length})</h3>
 
-        <div className="d-flex justify-content-evenly align-content-center  text-black mb-3 p-2 alert alert-dark">
+        <div className="d-flex justify-content-evenly align-content-center bg-light  mb-3 p-2 alert alert-dark">
           
           <p className="lead m-0">Pagina {Math.floor(skip/10) + 1} de {Math.ceil(total/10)}</p>
           

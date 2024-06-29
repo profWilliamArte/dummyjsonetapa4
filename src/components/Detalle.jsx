@@ -5,7 +5,7 @@ function Detalle({show, handleClose, producto}) {
 
   const precioFinal = producto.price - (producto.price * (producto.discountPercentage / 100));
   return (
-    <Modal show={show} onHide={handleClose} size="xl">
+    <Modal show={show} onHide={handleClose} size="xl" data-bs-theme="dark">
         <Modal.Header closeButton>
           <Modal.Title>Detalle del Producto</Modal.Title>
         </Modal.Header>

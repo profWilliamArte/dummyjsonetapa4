@@ -20,7 +20,7 @@ const Laptop = () => {
   return (
     <>
         <div className="container">
-        <h3 className="text-center py-3 text-black-50">Laptops ({datos.length})</h3>
+        <h3 className="text-center py-3 ">Laptops ({datos.length})</h3>
             <div className="row">
                 {datos && datos.map((productos)=>(
                   <Card key={productos.id} producto={productos}/>

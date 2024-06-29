@@ -31,7 +31,7 @@ const Card = ({producto}) => {
     return ( 
     <>
         <div className="col-sm-6 col-md-4 col-lg-3  mb-4" >
-                <div className="card h-100">
+                <div className="card h-100" data-bs-theme="dark">
                 <div className="card-header p-0">
                 {
                         totalProd > 0 && (
@@ -54,7 +54,7 @@ const Card = ({producto}) => {
                     <span className="text-danger">Precio Final: {precioFinal.toFixed(0).toLocaleString()}$</span></p>
                     
                     <hr/>
-                    <button className="btn btn-danger btn-sm mx-1"  onClick={handleShow}>Detalle</button>
+                    <button className="btn btn-outline-danger btn-sm mx-1"  onClick={handleShow}>Detalle</button>
                 </div>
                 <div className="card-footer text-center">
           
@@ -62,7 +62,25 @@ const Card = ({producto}) => {
 
 
             <div className="d-flex justify-content-center"> 
+            <select
+                value={cant}
+                onChange={handleChange}
+                className="form-control bg-dark text-white-50"
+                style={{ width: 80 }}
+                >
+                {Array.from({ length: producto.stock + 1 }, (_, i) => i).map((option) => (
+                    <option key={option} value={option}>
+                    {option}
+                    </option>
+                ))}
+                </select>
 
+
+
+
+
+
+{/*}
             <input 
             type="number" 
             value={cant} 
@@ -72,11 +90,11 @@ const Card = ({producto}) => {
             onFocus={(e) => e.target.select()}
             min={0}
             />
-                
+     */}           
             {totalProd === 0 ? (
-            <button className="btn btn-success btn-sm mx-1" onClick={() => agregar(producto, cant)}>Agregar</button>
+            <button className="btn btn-outline-success btn-sm mx-1" onClick={() => agregar(producto, cant)}>Agregar</button>
             ) : (
-            <button className="btn btn-warning btn-sm mx-1" onClick={() => agregar(producto, cant)}>Actualizar</button>
+            <button className="btn btn-outline-warning btn-sm mx-1" onClick={() => agregar(producto, cant)}>Actualizar</button>
             )}
                 </div>
         </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import FiltroCategorias from "./FiltroCategorias"
 import Login from "./Login";
 import { Link, useNavigate } from "react-router-dom"
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 
 import { CartFill } from 'react-bootstrap-icons';
 
@@ -49,28 +49,28 @@ const Header = () => {
     return (
 
     <>
-        <nav className="navbar navbar-expand-lg bg-black" data-bs-theme="dark">
+        <nav className="navbar navbar-expand-lg bg-danger fixed-top" data-bs-theme="dark">
         <div className="container-fluid">
-            <a className="navbar-brand" href="#"><img src={logo} alt="logo" width={100} /></a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon" />
+            <a className="navbar-brand" href="#"><img src={logo} alt="logo" width={250} /></a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon" />
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                    <Link to="/inicio" className="nav-link active" aria-current="page" href="/">Inicio</Link>
+                    <Link to="/inicio" className="nav-link  " aria-current="page" href="/">Inicio</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/tienda" className="nav-link" href="#">Tienda</Link>
+                    <Link to="/tienda" className="nav-link  " href="#">Tienda</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/movil" className="nav-link" href="#">Movil</Link>
+                    <Link to="/movil" className="nav-link " href="#">Movil</Link>
                 </li>
                 <li className="nav-item">
-                    <Link to="/laptop" className="nav-link" href="#">Laptop</Link>
+                    <Link to="/laptop" className="nav-link  " href="#">Laptop</Link>
                 </li>
                 <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a className="nav-link  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categorias
                     </a>
                     <ul className="dropdown-menu">
@@ -80,12 +80,12 @@ const Header = () => {
 
                 {total > 0 && (
                 <li className="nav-item">
-                    <Link to="/vercompra" className="nav-link text-warning">Ver Compra</Link>
+                    <Link to="/vercompra" className="nav-link  text-warning">Ver Compra</Link>
                 </li>
                 )}
 
                 <li className="nav-item">
-                    <Link to="/contactos" className="nav-link">Contactos</Link>
+                    <Link to="/contactos" className="nav-link ">Contactos</Link>
                 </li>
                 <li className="nav-item mx-4">
                 {
@@ -105,26 +105,16 @@ const Header = () => {
                         </ul>
                         </div>
                     </>
-                    :  <a className="btn btn-outline-info" href="#" onClick={handleShow}>Login</a>
+                    :  <a className="btn btn-dark" href="#" onClick={handleShow}>Login</a>
                 }
                 </li>
             </ul>
            
-            <button className='btn btn-danger me-2'  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">  <CartFill  size={25} /> <span className="bagbe bg-secondary">{cart.length}</span></button>
+            <button className='btn btn-dark me-2'  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">  <CartFill  size={25} /> <span className="bagbe bg-secondary">{cart.length}</span></button>
             <form className="d-flex" role="search" onSubmit={handleSubmit}>
                 <input  value={inputValue} onChange={handleChange} className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />    
                 <button className="btn btn-outline-success" type="submit">Search</button>
-               
-
-
-
-                
-
             </form>
-
-
-            
-
 
             </div>
            

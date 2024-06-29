@@ -6,12 +6,13 @@ const Vercompra = () => {
   return (
     <div className="container">
 
-    <h3 className="text-center text-black-50 py-3">Lista de Compra</h3>
+    <h3 className="text-center py-3">Lista de Compra</h3>
     <div className="card">
-      <table className="table table-striped table-bordered tabke-hover table-info">
-    <thead className="table-dark text-center">
+      <table className="table table-striped table-bordered tabke-hover " data-bs-theme="dark">
+    <thead className="text-center">
       <tr>
         <th scope="col">#</th>
+        <th scope="col">IMG</th>
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
@@ -29,7 +30,8 @@ const Vercompra = () => {
           const totalItem = precioFinal * item.cantidad;
           return (
             <tr key={index}>
-              <th scope="row">{index + 1}</th>
+              <td scope="row">{index + 1}</td>
+              <td><img src={item.thumbnail} alt={item.title} width={60} /></td>
               <td className="text-center">{item.id}</td>
               <td className="text-start">{item.title}</td>
               <td className="text-end">{item.price.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 })}</td>
@@ -46,7 +48,7 @@ const Vercompra = () => {
     </tbody>
     <tfoot>
       <tr>
-        <td colSpan="6" className="text-end">
+        <td colSpan="7" className="text-end">
           <b>Total:</b>
         </td>
         <td className="text-center">
@@ -68,7 +70,7 @@ const Vercompra = () => {
     </div>
     {cart.length > 0 ? (
       
-            <div className="card p-3 my-3">
+            <div className="card p-3 my-3" data-bs-theme="dark">
 
                 <button className="btn btn-danger btn-sm mx-1 mb-2" onClick={() => vaciar()}>Vaciar Carrito</button>
             
