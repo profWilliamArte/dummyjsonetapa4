@@ -2,7 +2,7 @@ import { useState } from "react";
 import FiltroCategorias from "./FiltroCategorias"
 import Login from "./Login";
 import { Link, useNavigate } from "react-router-dom"
-import logo from "../assets/logo.png";
+import logo from "../assets/logo1.jpg";
 
 import { CartFill } from 'react-bootstrap-icons';
 
@@ -49,7 +49,7 @@ const Header = () => {
     return (
 
     <>
-        <nav className="navbar navbar-expand-lg bg-danger fixed-top" data-bs-theme="dark">
+        <nav className="navbar navbar-expand-lg bg-menu fixed-top" data-bs-theme="dark">
         <div className="container-fluid">
             <a className="navbar-brand" href="#"><img src={logo} alt="logo" width={250} /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
